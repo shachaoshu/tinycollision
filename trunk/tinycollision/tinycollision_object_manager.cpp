@@ -8,6 +8,10 @@ TinyCollison::Area::Area(NumberList &params )
 	y_width = params[3];
 }
 
+TinyCollison::Area::Area()
+{
+
+}
 void TinyCollison::CollisionManager::CheckCollision()
 {
 	if(m_object_list.empty())
@@ -16,7 +20,7 @@ void TinyCollison::CollisionManager::CheckCollision()
 	ObjectList::iterator itr1;
 	for( itr = m_object_list.begin() ; itr < m_object_list.end() ;itr ++)
 	{
-		for(itr1 = itr + 1 ; itr1 <= m_object_list.end() ; itr1 ++)
+		for(itr1 = itr + 1 ; itr1 < m_object_list.end() ; itr1 ++)
 		{
 			if((*itr)->CollisionWith(*itr1))
 			{
