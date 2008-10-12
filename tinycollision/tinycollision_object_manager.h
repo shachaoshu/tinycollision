@@ -11,15 +11,19 @@ namespace TinyCollison{
 		int x_width;
 		int y_width;
 	public:
-		Area(NumberList & parmas);
+		Area(NumberList & params);
 	};
 
-	class ObjectManager{
+	class CollisionManager{
+		typedef std::vector< Object*> ObjectList;
+
 	private:
 		Area m_areas[4];
-		std::vector<Object *> m_object_list; 
+		ObjectList m_object_list; 
 	public:
-		
+		void CheckCollision();
+		void AddObject(Object * obj);
+		void DelObject(Object * obj);
 	};
 }
 #endif // tinycollision_object_manager_h__
