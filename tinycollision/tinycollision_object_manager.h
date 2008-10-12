@@ -2,6 +2,7 @@
 #define tinycollision_object_manager_h__
 #include "tinycollision_def.h"
 #include "tinycollision_object.h"
+#include "tinycollision_object_view.h"
 #include <vector>
 namespace TinyCollison{
 	class Area{
@@ -12,6 +13,7 @@ namespace TinyCollison{
 		int y_width;
 	public:
 		Area(NumberList & params);
+		Area();
 	};
 
 	class CollisionManager{
@@ -24,6 +26,11 @@ namespace TinyCollison{
 		void CheckCollision();
 		void AddObject(Object * obj);
 		void DelObject(Object * obj);
+
+		CollisionManager()
+		{
+
+		}
 	};
 }
 #endif // tinycollision_object_manager_h__

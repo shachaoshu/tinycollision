@@ -1,10 +1,13 @@
 #ifndef tinycollision_object_h__
 #define tinycollision_object_h__
+namespace TinyCollison{
+	class Object;
+}
 #include "tinycollision_object_view.h"
 namespace TinyCollison{
 	class Object{
 		friend  ObjectView;
-	private:
+	public:
 		int x;
 		int y;	//中心坐标
 		int z;
@@ -18,9 +21,21 @@ namespace TinyCollison{
 
 		//方法
 		Object(int x=0, int y=0, int z=0 ,int x_width =1,int y_width =1,int z_width=1);
-		inline void AddX(int v);
-		inline void AddY(int v);
-		inline void AddZ(int v);
+		inline void AddX( int v )
+		{
+			x += v;
+		}
+
+		inline void AddY( int v )
+		{
+			y += v;
+		}
+
+
+		inline void AddZ( int v )
+		{
+			z += v;
+		}
 
 		
 	};
