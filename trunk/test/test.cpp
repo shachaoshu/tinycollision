@@ -17,7 +17,7 @@ public:
 		this->y_width = y_width;
 		this->z_width = z_width;
 	}
-	void OnCollision( const Object *){
+	void OnCollision( const Object * other_obj){
 		MessageBoxA(0,"Åö×²ÁË","Åö×²ÁË", MB_OK);
 	};
 };
@@ -73,7 +73,6 @@ int main(int argc, char * argv[])
 
 	Uint32 time_start = SDL_GetTicks();
 	Uint32 time_now;
-	SDL_Event event;
 	SDL_Rect fullscreen;
 	fullscreen.x = 0;
 	fullscreen.y = 0;
